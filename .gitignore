@@ -1,0 +1,24 @@
+# Ambiente virtual
+venv/
+.env/
+
+# Arquivos de dados
+data/
+*.parquet
+
+# Arquivos temporários
+*.pyc
+__pycache__/
+
+# VS Code
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# test
+test_read.py
