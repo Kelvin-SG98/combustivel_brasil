@@ -4,6 +4,8 @@ import requests
 from io import BytesIO
 from pyspark.sql import SparkSession
 
+print("Executando a partir de:", os.getcwd())
+print("Arquivos disponíveis:", os.listdir('.'))
 
 def extract_data(spark: SparkSession, bronze_path: str):
     """
@@ -27,6 +29,8 @@ def extract_data(spark: SparkSession, bronze_path: str):
 
     # Converte para Spark
     df_spark = spark.createDataFrame(df_pandas)
+
+    print(f"Total de linhas extraídas: {df_spark.count()}")
 
     os.makedirs(bronze_path, exist_ok=True)
     df_spark.write.mode("overwrite").parquet(os.path.join(bronze_path, "combustivel_raw.parquet"))

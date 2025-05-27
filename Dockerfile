@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:17-slim
 
 # Instala o Python e dependências
 RUN apt-get update && apt-get install -y python3 python3-pip && \
